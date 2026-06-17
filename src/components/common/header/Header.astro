@@ -1,0 +1,133 @@
+---
+import logoImage from "@assets/logo.png";
+import { Image } from "astro:assets";
+import BurgerMenu from "./BurgerMenu";
+
+const textLinks: { label: string; href: string }[] = [
+  { label: "Главная", href: "/" },
+  { label: "Портфолио", href: "/works/" },
+  // { label: "Услуги", href: "/options/" },
+  // { label: "Обо мне", href: "/about/" },
+];
+
+const isCurrentPage = (href: string) => {
+  let pathname = Astro.url.pathname; //.replace(import.meta.env.BASE_URL, '');
+  if (pathname.at(0) !== "/") pathname = "/" + pathname;
+  if (pathname.at(-1) !== "/") pathname += "/";
+  return pathname === href || (href !== "/" && pathname.startsWith(href));
+};
+---
+
+<header class="container z-50">
+  <nav>
+    <div>
+      <a href="/" class="hover:opacity-80 focus-visible:opacity-80 transition-opacity">
+        <Image
+          src={logoImage}
+          class="w-[143px] md:w-[192px] 2xl:w-[243px]"
+          loading="eager"
+          alt="DS Motion"
+        />
+      </a>
+    </div>
+
+    <div class="hidden md:block">
+      <ul class="flex gap-16 p-0">
+        {
+          textLinks.map(({ label, href }) => (
+            <li>
+              <a
+                aria-current={isCurrentPage(href) ? "page" : null}
+                class="link link__underline"
+                href={href}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <a class="link hidden md:block" href="https://t.me/Meeetix" target="_blank">Связаться</a>
+
+      <BurgerMenu client:load>
+        <a
+          href="/"
+          class="text-center mb-2 h-16 hover:opacity-80 focus-visible:opacity-80 transition-opacity"
+        >
+          <Image class="w-[168px] md:w-[243px] mx-auto" src={logoImage} alt="DS Motion" />
+        </a>
+
+        <ul class="flex flex-col">
+          {
+            textLinks.map(({ label, href }) => (
+              <li>
+                <a
+                  aria-current={isCurrentPage(href) ? "page" : null}
+                  class="block link"
+                  href={href}
+                >
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <a class="link text-center" href="https://t.me/Meeetix" target="_blank">Связаться</a>
+      </BurgerMenu>
+    </div>
+  </nav>
+
+  <style>
+    nav {
+      padding-top: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 1600px) {
+        padding-top: 25px;
+      }
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 7.2rem;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .link {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      padding: 1rem 0.2rem;
+      position: relative;
+    }
+
+    .link[aria-current] {
+      color: var(--primary-color);
+    }
+    .link[aria-current].link__underline::after {
+      content: "";
+      position: absolute;
+      bottom: -0.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2.7rem;
+      height: 0.1rem;
+      background-color: var(--primary-color);
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      color: var(--primary-color);
+    }
+  </style>
+</header>

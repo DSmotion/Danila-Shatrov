@@ -1,0 +1,47 @@
+---
+import behanceIcon from "@assets/icons/socials/behance.svg";
+import emailIcon from "@assets/icons/socials/email.svg";
+import instagramIcon from "@assets/icons/socials/instagram.svg";
+import telegramIcon from "@assets/icons/socials/telegram.svg";
+import whatsappIcon from "@assets/icons/socials/whatsapp.svg";
+import { Image } from "astro:assets";
+
+const socials: {
+  link: string;
+  icon: ((_props: astroHTML.JSX.SVGAttributes) => any) & ImageMetadata;
+  title: string;
+}[] = [
+  { link: "https://www.behance.net/fb9a2ba4", icon: behanceIcon, title: "Behance" },
+  {
+    link: "https://www.instagram.com/stttunt__?igsh=MXhiemxjaXk2Y2doMg%3D%3D&utm_source=qr",
+    icon: instagramIcon,
+    title: "Instagram",
+  },
+  { link: "https://wa.me/79251443937", icon: whatsappIcon, title: "WhatsApp" },
+  { link: "https://t.me/Meeetix", icon: telegramIcon, title: "Telegram" },
+  { link: "mailto:shatrov@createe.ru", icon: emailIcon, title: "Email" },
+];
+---
+
+<div class="container" transition:name="footer">
+  <footer class="mb-10 bg-[#101010] rounded-full md:mb-16">
+    <div class="flex justify-between items-center px-6 md:px-12 py-4 md:py-7">
+      <p class="md:text-xl text-neutral-600">Контакты</p>
+      <ul class="flex gap-3 md:gap-5 items-center">
+        {
+          socials.map(({ link, icon, title }) => (
+            <li>
+              <a
+                class="hover:opacity-70 focus-visible:opacity-70 transition-opacity"
+                href={link}
+                target="_blank"
+              >
+                <Image class="w-5 h-5 md:w-6 md:h-6" src={icon} alt={title} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </footer>
+</div>

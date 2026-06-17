@@ -1,0 +1,29 @@
+---
+import "@fontsource-variable/unbounded";
+import "../styles/global.css";
+import Footer from "@components/common/footer/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const pageTitle = title ? `${title} - DS Motion` : "DS Motion";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <ClientRouter />
+  </head>
+  <body class="font-display">
+    <slot />
+    <Footer />
+  </body>
+</html>

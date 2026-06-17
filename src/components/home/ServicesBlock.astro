@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import service1 from '../../assets/home/service-1.png';
+import service2 from '../../assets/home/service-2.png';
+import service3 from '../../assets/home/service-3.png';
+---
+<section class="w-full py-16 bg-black">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-white text-3xl font-bold mb-12">Мои услуги</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl p-6 flex flex-col items-center">
+        <Image src={service1} alt="Моушн" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="text-xl font-extrabold text-white mb-2">Моушн</div>
+        <div class="text-gray-200 text-center">Анимация для брендов и продуктов.</div>
+      </div>
+      <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl p-6 flex flex-col items-center">
+        <Image src={service2} alt="Визуализация" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="text-xl font-extrabold text-white mb-2">Визуализация</div>
+        <div class="text-gray-200 text-center">Визуальная демонстрация идей и продуктов.</div>
+      </div>
+      <div class="bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl p-6 flex flex-col items-center">
+        <Image src={service3} alt="Моделирование" class="rounded-xl mb-4 w-full h-48 object-cover" />
+        <div class="text-xl font-extrabold text-white mb-2">Моделирование</div>
+        <div class="text-gray-200 text-center">Детализированные 3D-модели продуктов.</div>
+      </div>
+    </div>
+    <div class="flex justify-end mt-8">
+      <button class="flex items-center gap-2 bg-[#131313] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-[#222] transition">
+        Все услуги
+        <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M5 10h10M10 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section> 

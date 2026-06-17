@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets';
+import showreel from '../../assets/home/showreel.png';
+---
+<section class="w-full flex justify-center py-16 bg-black">
+  <div class="max-w-5xl w-full flex flex-col items-center">
+    <div class="rounded-3xl overflow-hidden shadow-lg w-full aspect-video bg-gray-900 cursor-pointer relative" id="video-block">
+      <button id="video-preview" class="w-full h-full absolute inset-0 z-10 flex items-center justify-center" style="outline: none;">
+        <Image src={showreel} alt="Showreel preview" class="w-full h-full object-cover" />
+        <span class="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <span class="bg-black/50 transition rounded-full w-20 h-20 flex items-center justify-center shadow-lg">
+            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="28" cy="28" r="28" fill="white" fill-opacity="0.0"/>
+              <path d="M22 17L40 28L22 39V17Z" fill="#B292FF"/>
+            </svg>
+          </span>
+        </span>
+      </button>
+      <video id="video-player" src="https://github.com/DSmotion/VIDEO/raw/refs/heads/main/HB.mp4" controls class="w-full h-full object-cover hidden" poster={showreel.src}></video>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const preview = document.getElementById('video-preview');
+    const video = document.getElementById('video-player');
+    if (preview && video) {
+      preview.addEventListener('click', () => {
+        preview.style.display = 'none';
+        video.classList.remove('hidden');
+        (video instanceof HTMLVideoElement) && video.play();
+      });
+    }
+  });
+</script> 

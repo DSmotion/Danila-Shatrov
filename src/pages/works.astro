@@ -1,0 +1,67 @@
+---
+import Header from "@components/common/header/Header.astro";
+import { WorksPageContent } from "@components/works/WorksPageContent";
+import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import gradient from "../assets/gradient-works.svg";
+import TopText from "@components/works/TopText.astro";
+---
+
+<Layout title="Портфолио">
+  <Header />
+
+
+  <div>
+    <Image class="particles-1" src={gradient} loading="eager" alt="background" />
+    <Image class="particles-2" src={gradient} loading="eager" alt="background" />
+  </div>
+
+  <main class="container">
+    <WorksPageContent client:load>
+      <TopText />
+    </WorksPageContent>
+  </main>
+</Layout>
+
+<style lang="scss">
+  .particles-1 {
+    position: absolute;
+    filter: blur(100px);
+    z-index: -1;
+    right: 50%;
+    top: -440px;
+    user-select: none;
+
+    rotate: 180deg;
+    scale: 1.5 1;
+
+    @media (min-width: 1100px) {
+      transform: translateX(-50%);
+    }
+
+    @media (max-width: 1099px) {
+      filter: blur(80px);
+      right: 0;
+      top: -450px;
+    }
+    @media (max-width: 767px) {
+      scale: 1;
+      right: -20%;
+      top: -120px;
+      width: 40%;
+    }
+  }
+
+  .particles-2 {
+    position: absolute;
+    filter: blur(130px);
+    z-index: -1;
+    user-select: none;
+
+    @media (max-width: 800px) {
+      filter: blur(80px);
+      width: 50%;
+      top: 120px;
+    }
+  }
+</style>

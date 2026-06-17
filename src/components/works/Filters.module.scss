@@ -1,0 +1,65 @@
+.filters {
+  display: flex;
+  gap: 2rem;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.filter {
+  color: var(--text-color-darken);
+  border-radius: 99px;
+  background-color: hsla(0, 0%, 7%, 0.7);
+  padding: 12px 30px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    background-color: hsl(0, 0%, 14%);
+  }
+
+  &:has(input:checked) {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .filterContent {
+    display: flex;
+    gap: 20px;
+
+    .filterIcon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .inputDot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+  }
+
+  &:has(input:checked) {
+    .inputDot {
+      display: none;
+    }
+  }
+  &:not(:has(input:checked)) {
+    .inputArrow {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+---
+import { Image } from 'astro:assets';
+import heroBg from '../../assets/home/hero-bg.png';
+import client1 from '../../assets/home/client-1.png';
+import client2 from '../../assets/home/client-2.png';
+import client3 from '../../assets/home/client-3.png';
+import client4 from '../../assets/home/client-4.png';
+import client5 from '../../assets/home/client-5.png';
+---
+<section class="relative w-full h-full md:min-h-[80vh] max-h-screen flex flex-col justify-center bg-black overflow-hidden -mt-6 sm:-mt-8 md:-mt-16">
+  <!-- Фоновое изображение -->
+  <Image src={heroBg} alt="Фон" class="absolute inset-0 w-full h-full object-cover md:object-contain z-0" />
+
+  <!-- Контент Hero -->
+  <div class="relative z-10 flex flex-col items-center justify-center flex-1 text-center px-3 pt-16 pb-24 sm:px-6 sm:pt-20 sm:pb-28 md:px-8 md:pt-24 md:pb-32">
+    <div class="w-full max-w-xs xs:max-w-md sm:max-w-2xl md:max-w-5xl mx-auto flex flex-col">
+      <h1 class="text-white font-bold text-3xl xs:text-4xl sm:text-5xl md:text-6xl leading-tight mb-4 xs:mb-5 sm:mb-6 text-center">
+        Помогаю брендам <span style="color: var(--secondary-color)">выделяться</span> с помощью анимации и эффектов
+      </h1>
+      <div class="text-white/80 text-base xs:text-lg sm:text-xl md:text-2xl mb-6 xs:mb-8 sm:mb-10 text-right ml-auto">
+        Визуализация, которая привлекает внимание
+      </div>
+    </div>
+  </div>
+
+  <!-- Логотипы клиентов внутри Hero, внизу -->
+  <div class="relative z-10 w-full flex flex-wrap items-center justify-center gap-8 xs:gap-10 sm:gap-14 md:gap-20 pb-6 xs:pb-8 sm:pb-12 md:pb-16 mt-auto">
+    <Image src={client1} alt="Клиент 1" class="h-6 xs:h-7 sm:h-8 md:h-10 w-auto" />
+    <Image src={client2} alt="Клиент 2" class="h-6 xs:h-7 sm:h-8 md:h-10 w-auto" />
+    <Image src={client3} alt="Клиент 3" class="h-6 xs:h-7 sm:h-8 md:h-10 w-auto" />
+    <Image src={client4} alt="Клиент 4" class="h-6 xs:h-7 sm:h-8 md:h-10 w-auto" />
+    <Image src={client5} alt="Клиент 5" class="h-6 xs:h-7 sm:h-8 md:h-10 w-auto" />
+  </div>
+</section>
+
+<style lang="scss">
+  .text {
+    padding-top: 256px;
+    max-width: 60%;
+    text-align: center;
+    margin: 0 auto;
+
+    @media (max-width: 1600px) {
+      max-width: 70%;
+    }
+    @media (max-width: 1350px) {
+      max-width: 80%;
+    }
+    @media (max-width: 1180px) {
+      max-width: 90%;
+    }
+    @media (max-width: 1000px) {
+      max-width: 100%;
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-bottom: 4.8rem;
+
+      .secondary {
+        color: var(--secondary-color);
+      }
+    }
+
+    h3 {
+      font-weight: 300;
+      font-size: var(--text-xl);
+      text-align: end;
+    }
+  }
+
+  .works-link {
+    display: none !important;
+
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: var(--text-md);
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    display: flex;
+    gap: 1.6rem;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--primary-color);
+
+      .works-link__arrow {
+        transform: translateX(1rem);
+      }
+    }
+
+    &__arrow {
+      transition: transform 0.2s ease;
+    }
+  }
+</style>
