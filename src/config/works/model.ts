@@ -1,7 +1,113 @@
 import type { WorkWithoutType } from "src/types/works";
 
 export const MODEL_WORKS: WorkWithoutType[] = [
-  
+  {
+    year: "",
+    title: "",
+    previewUrl: "/images/model/preview/1/22.webp",
+    contentType: "gallery",
+    content: {
+      images: [
+        {
+          url: "/images/model/content/22/1.png",
+        },
+        {
+          url: "/images/model/content/22/2.png",
+        },
+        {
+          url: "/images/model/content/22/3.png",
+        },
+        {
+          url: "/images/model/content/22/4.png",
+        },
+        {
+          url: "/images/model/content/22/5.png",
+        },
+        {
+          url: "/images/model/content/22/6.png",
+        },
+        {
+          url: "/images/model/content/22/7.png",
+        },
+        {
+          url: "/images/model/content/22/8.png",
+        },
+        {
+          url: "/images/model/content/22/9.png",
+        },
+        {
+          url: "/images/model/content/22/10.png",
+        },
+        {
+          url: "/images/model/content/22/1.png",
+        },
+      ],
+    },
+  },  {
+    year: "",
+    title: "",
+    previewUrl: "/images/model/preview/1/21.webp",
+    contentType: "gallery",
+    content: {
+      images: [
+        {
+          url: "/images/model/content/21/1.png",
+        },
+        {
+          url: "/images/model/content/21/2.png",
+        },
+        {
+          url: "/images/model/content/21/3.png",
+        },
+        {
+          url: "/images/model/content/21/4.png",
+        },
+        {
+          url: "/images/model/content/21/5.png",
+        },
+        {
+          url: "/images/model/content/21/6.png",
+        },
+        {
+          url: "/images/model/content/21/7.png",
+        },
+        {
+          url: "/images/model/content/21/8.png",
+        },
+        {
+          url: "/images/model/content/21/9.png",
+        },
+      ],
+    },
+  },
+  {
+    year: "",
+    title: "",
+    previewUrl: "/images/model/preview/1/20.webp",
+    contentType: "gallery",
+    content: {
+      images: [
+        {
+          url: "/images/model/content/20/1.png",
+        },
+        {
+          url: "/images/model/content/20/2.png",
+        },
+        {
+          url: "/images/model/content/20/3.png",
+        },
+        {
+          url: "/images/model/content/20/4.png",
+        },
+        {
+          url: "/images/model/content/20/5.png",
+        },
+        {
+          url: "/images/model/content/20/6.png",
+        },
+      ],
+    },
+  },  
   {
     year: "",
     title: "",
