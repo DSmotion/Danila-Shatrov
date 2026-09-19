@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 import BurgerMenu from "./BurgerMenu";
 
 const textLinks: { label: string; href: string }[] = [
-  { label: "Главная", href: "/" },
+  // { label: "Главная", href: "/" },
   { label: "Портфолио", href: "/works/" },
   // { label: "Услуги", href: "/options/" },
   // { label: "Обо мне", href: "/about/" },
@@ -21,7 +21,7 @@ const isCurrentPage = (href: string) => {
 <header class="container z-50">
   <nav>
     <div>
-      <a href="/" class="hover:opacity-80 focus-visible:opacity-80 transition-opacity">
+      <a href="/works/" class="hover:opacity-80 focus-visible:opacity-80 transition-opacity">
         <Image
           src={logoImage}
           class="w-[143px] md:w-[192px] 2xl:w-[243px]"
@@ -54,7 +54,7 @@ const isCurrentPage = (href: string) => {
 
       <BurgerMenu client:load>
         <a
-          href="/"
+          href="/works/"
           class="text-center mb-2 h-16 hover:opacity-80 focus-visible:opacity-80 transition-opacity"
         >
           <Image class="w-[168px] md:w-[243px] mx-auto" src={logoImage} alt="DS Motion" />

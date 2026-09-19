@@ -3,6 +3,33 @@ import type { WorkWithoutType } from "src/types/works";
 export const VIDEO_WORKS: WorkWithoutType[] = [
   {
     year: "2026",
+    title: "FOCUS GAP",
+    previewUrl: "/images/video/preview/FOCUS_GAP.webp",
+    contentType: "video",
+    content: {
+      videoUrl: "/images/video/content/FOCUS_GAP.mp4",
+    },
+  },
+  {
+    year: "2026",
+    title: "OXUSTECH | BONUS",
+    previewUrl: "/images/video/preview/OXUSTECH_2.webp",
+    contentType: "video",
+    content: {
+      videoUrl: "/images/video/content/OXUSTECH_2.mp4",
+    },
+  },npm run build
+  {
+    year: "2026",
+    title: "OXUSTECH",
+    previewUrl: "/images/video/preview/OXUSTECH_1.webp",
+    contentType: "video",
+    content: {
+      videoUrl: "/images/video/content/OXUSTECH_1.mp4",
+    },
+  },
+  {
+    year: "2026",
     title: "INHOMEKA",
     previewUrl: "/images/video/preview/INHOMEKA_POLKA_SILVER.webp",
     contentType: "video",

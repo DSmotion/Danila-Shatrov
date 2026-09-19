@@ -4,6 +4,52 @@ export const MODEL_WORKS: WorkWithoutType[] = [
   {
     year: "",
     title: "",
+    previewUrl: "/images/model/preview/1/23.webp",
+    contentType: "gallery",
+    content: {
+      images: [
+        {
+          url: "/images/model/content/23/1.png",
+        },
+        {
+          url: "/images/model/content/23/2.png",
+        },
+        {
+          url: "/images/model/content/23/3.png",
+        },
+        {
+          url: "/images/model/content/23/4.png",
+        },
+        {
+          url: "/images/model/content/23/5.png",
+        },
+        {
+          url: "/images/model/content/23/6.png",
+        },
+        {
+          url: "/images/model/content/23/7.png",
+        },
+        {
+          url: "/images/model/content/23/8.png",
+        },
+        {
+          url: "/images/model/content/23/9.png",
+        },
+        {
+          url: "/images/model/content/23/10.png",
+        },
+        {
+          url: "/images/model/content/23/11.png",
+        },
+        {
+          url: "/images/model/content/23/12.png",
+        },
+      ],
+    },
+  },
+  {
+    year: "",
+    title: "",
     previewUrl: "/images/model/preview/1/22.webp",
     contentType: "gallery",
     content: {
@@ -43,7 +89,8 @@ export const MODEL_WORKS: WorkWithoutType[] = [
         },
       ],
     },
-  },  {
+  },  
+  {
     year: "",
     title: "",
     previewUrl: "/images/model/preview/1/21.webp",
