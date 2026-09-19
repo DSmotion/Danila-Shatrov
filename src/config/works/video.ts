@@ -18,7 +18,7 @@ export const VIDEO_WORKS: WorkWithoutType[] = [
     content: {
       videoUrl: "/images/video/content/OXUSTECH_2.mp4",
     },
-  },npm run build
+  },
   {
     year: "2026",
     title: "OXUSTECH",
